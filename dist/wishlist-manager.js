@@ -1878,15 +1878,23 @@ var wishlist_manager_WishlistManager = /*#__PURE__*/function () {
     key: "getWishlistFromCache",
     value: function getWishlistFromCache(wishlistid) {
       var key = "wishlist-".concat(wishlistid);
+      var value = localStorage.getItem(key);
+      var entry;
+
+      if (typeof value !== 'string') {
+        return;
+      }
 
       try {
-        var entry = JSON.parse(localStorage.getItem(key));
+        entry = JSON.parse(value);
+      } catch (e) {
+        // eslint-disable-next-line no-console
+        console.error("Invalid '".concat(key, "' entry at localStorage"));
+      }
 
-        if (entry.created_at && !this.isExpired(entry) && entry.wishlist && entry.wishlist.id) {
-          this.setWishlistDetails(entry.wishlist);
-          return entry.wishlist;
-        }
-      } catch (e) {// no-op
+      if (entry && entry.created_at && !this.isExpired(entry) && entry.wishlist && entry.wishlist.id) {
+        this.setWishlistDetails(entry.wishlist);
+        return entry.wishlist;
       }
     }
     /**
