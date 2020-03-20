@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [Unreleased]
 ### Added
 - Project Setup (git, EditorConfig, ESLint, Jest, Babel, Webpack, docs and npm)
+- Post-install script (copy "json-this.html" file into theme's templates folder)
 
 ## [0.0.0] - 2020-01-07
 ### Added

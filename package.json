@@ -4,6 +4,7 @@
   "description": "Easy-to-use Wishlist functionality for BigCommerce themes.",
   "main": "index.js",
   "scripts": {
+    "postinstall": "node ./postinstall/index.js",
     "build": "npm run lint && npm run test && webpack --progress",
     "dev": "webpack --watch",
     "lint": "eslint .",
