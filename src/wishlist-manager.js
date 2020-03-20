@@ -473,14 +473,23 @@ class WishlistManager {
      */
     getWishlistFromCache(wishlistid) {
         const key = `wishlist-${wishlistid}`;
+        const value = localStorage.getItem(key);
+        let entry;
+
+        if (typeof value !== 'string') {
+            return;
+        }
+
         try {
-            const entry = JSON.parse(localStorage.getItem(key));
-            if (entry.created_at && !this.isExpired(entry) && entry.wishlist && entry.wishlist.id) {
-                this.setWishlistDetails(entry.wishlist);
-                return entry.wishlist;
-            }
+            entry = JSON.parse(value);
         } catch (e) {
-            // no-op
+            // eslint-disable-next-line no-console
+            console.error(`Invalid '${key}' entry at localStorage`);
+        }
+
+        if (entry && entry.created_at && !this.isExpired(entry) && entry.wishlist && entry.wishlist.id) {
+            this.setWishlistDetails(entry.wishlist);
+            return entry.wishlist;
         }
     }
 
