@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Post-install script (copy "json-this.html" file into theme's templates folder)
 - WishlistManager class and wishlistManager instance
 - Tests for WishlistManager class
+- Build output ("dist" folder)
 
 ## [0.0.0] - 2020-01-07
 ### Added
