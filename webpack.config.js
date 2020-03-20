@@ -30,7 +30,7 @@ module.exports = [{
     ...common,
     output: {
         path: path.resolve(__dirname, 'dist'),
-        filename: 'wishlist.js',
+        filename: 'wishlist-manager.js',
         ...exportModule,
     },
     optimization: {
@@ -40,7 +40,7 @@ module.exports = [{
     ...common,
     output: {
         path: path.resolve(__dirname, 'dist'),
-        filename: 'wishlist.min.js',
+        filename: 'wishlist-manager.min.js',
         ...exportModule,
     },
 }];
