@@ -1135,7 +1135,8 @@ var wishlist_manager_WishlistManager = /*#__PURE__*/function () {
     /**
      * Gets all wishlists
      *
-     * @return {Promise<array>}   All wishlists
+     * @param  {boolean} forceFetch   True to ignore the cache, False otherwise
+     * @return {Promise<array>}       All wishlists
      */
 
   }, {
@@ -1192,6 +1193,7 @@ var wishlist_manager_WishlistManager = /*#__PURE__*/function () {
      * Gets a wishlist
      *
      * @param  {integer} wishlistid   Wishlist ID
+     * @param  {boolean} forceFetch   True to ignore the cache, False otherwise
      * @return {Promise<object>}      The wishlist
      */
 
@@ -1251,7 +1253,7 @@ var wishlist_manager_WishlistManager = /*#__PURE__*/function () {
      * Creates a wishlist
      *
      * @param  {object}  params             The wishlist attributes
-     * @param  {string}  params.name        Wishlist name (rquired)
+     * @param  {string}  params.name        Wishlist name (required)
      * @param  {boolean} params.is_public   Indicates if wishlist is public (required)
      * @param  {integer} params.product_id  ID of a product to be added to the wishlist (optional)
      * @return {Promise<object>}            The created wishlist
@@ -1921,8 +1923,8 @@ var wishlist_manager_WishlistManager = /*#__PURE__*/function () {
     /**
      * Register an event listener
      *
-     * @param {string}   name      Event name (one of this.events values)
-     * @param {function} callback  The function to run when the event is triggered
+     * @param {string}   name       Event name (one of this.events values)
+     * @param {function} callback   The function to run when the event is triggered
      */
 
   }, {
@@ -1941,8 +1943,8 @@ var wishlist_manager_WishlistManager = /*#__PURE__*/function () {
     /**
      * Unregister an event listener
      *
-     * @param {string}   name      Event name (one of this.events values)
-     * @param {function} callback  The function to be removed from listeners
+     * @param {string}   name       Event name (one of this.events values)
+     * @param {function} callback   The function to be removed from listeners
      */
 
   }, {
