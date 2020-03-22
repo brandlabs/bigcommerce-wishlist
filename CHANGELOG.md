@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - WishlistManager class and wishlistManager instance
 - Tests for WishlistManager class
 - Build output ("dist" folder)
+- Documentation
 
 ## [0.0.0] - 2020-01-07
 ### Added

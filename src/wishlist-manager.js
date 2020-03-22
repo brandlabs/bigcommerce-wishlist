@@ -88,7 +88,8 @@ class WishlistManager {
     /**
      * Gets all wishlists
      *
-     * @return {Promise<array>}   All wishlists
+     * @param  {boolean} forceFetch   True to ignore the cache, False otherwise
+     * @return {Promise<array>}       All wishlists
      */
     async getAllWishlists(forceFetch = false) {
         // Try loading from cache
@@ -107,6 +108,7 @@ class WishlistManager {
      * Gets a wishlist
      *
      * @param  {integer} wishlistid   Wishlist ID
+     * @param  {boolean} forceFetch   True to ignore the cache, False otherwise
      * @return {Promise<object>}      The wishlist
      */
     async getWishlist(wishlistid, forceFetch = false) {
@@ -126,7 +128,7 @@ class WishlistManager {
      * Creates a wishlist
      *
      * @param  {object}  params             The wishlist attributes
-     * @param  {string}  params.name        Wishlist name (rquired)
+     * @param  {string}  params.name        Wishlist name (required)
      * @param  {boolean} params.is_public   Indicates if wishlist is public (required)
      * @param  {integer} params.product_id  ID of a product to be added to the wishlist (optional)
      * @return {Promise<object>}            The created wishlist
@@ -512,8 +514,8 @@ class WishlistManager {
     /**
      * Register an event listener
      *
-     * @param {string}   name      Event name (one of this.events values)
-     * @param {function} callback  The function to run when the event is triggered
+     * @param {string}   name       Event name (one of this.events values)
+     * @param {function} callback   The function to run when the event is triggered
      */
     on(name, callback) {
         if (!Array.isArray(this.eventListeners[name])) {
@@ -528,8 +530,8 @@ class WishlistManager {
     /**
      * Unregister an event listener
      *
-     * @param {string}   name      Event name (one of this.events values)
-     * @param {function} callback  The function to be removed from listeners
+     * @param {string}   name       Event name (one of this.events values)
+     * @param {function} callback   The function to be removed from listeners
      */
     off(name, callback) {
         if (!Array.isArray(this.eventListeners[name])) {
