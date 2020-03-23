@@ -1,7 +1,7 @@
 {
   "name": "brandlabs-bigcommerce-wishlist",
-  "version": "0.0.0",
-  "description": "Easy-to-use Wishlist functionality for BigCommerce themes.",
+  "version": "0.1.0",
+  "description": "Easy-to-use wishlist functionality for BigCommerce themes.",
   "main": "index.js",
   "scripts": {
     "postinstall": "node ./postinstall/index.js",
