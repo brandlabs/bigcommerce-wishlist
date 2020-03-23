@@ -40,7 +40,7 @@ In this document:
 Install the package as a dependency of your Stencil theme:
 
 ```
-npm install brandlabs-bigcommerce-wishlist --save-dev
+npm install brandlabs-bigcommerce-wishlist
 ```
 
 ### Required template
